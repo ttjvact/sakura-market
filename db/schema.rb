@@ -15,7 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_21_155233) do
     t.string "product_name"
     t.text "product_image"
     t.integer "price"
-    t.string "discription"
+    t.string "description"
     t.boolean "hidden"
     t.integer "priority"
     t.datetime "created_at", null: false

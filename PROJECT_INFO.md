@@ -69,9 +69,11 @@
 ### タスク2: [商品ページの作成]
 - **説明**: 商品、トップページの作成
 - **要件**: 
-  - 商品コントローラー(TOPページ) ItemController
-  - 商品モデル Item
-- **作業時間**: 60m
+  - 商品コントローラー(TOPページ) ItemController 30m
+  - 商品モデル Item 30m
+  - サンプルデータ登録 40m
+
+- **作業時間**: 100m
 
 
 ## 進捗状況
@@ -81,3 +83,4 @@
 ## ノート
 - ※1 https://railsguides.jp/getting_started.html
 - ※2 https://qiita.com/kmkkiii/items/f07803ddaab267e1a407
+- https://fakerjs.dev/api/commerce.html
