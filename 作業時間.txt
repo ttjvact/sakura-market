@@ -1,5 +1,0 @@
-・環境構築 10分
-https://railsguides.jp/getting_started.html
-
-・デプロイ環境構築 20分
-https://qiita.com/kmkkiii/items/f07803ddaab267e1a407
