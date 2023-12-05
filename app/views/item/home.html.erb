@@ -1,0 +1,8 @@
+<h1>商品一覧</h1>
+<ul>
+  <% @items.each do |item| %>
+    <% link_to %>
+    <li><%= item.product_name %> - ¥<%= item.price %></li>
+  <% end %>
+  <%= will_paginate @items %>
+</ul>

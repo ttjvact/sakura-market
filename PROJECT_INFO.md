@@ -66,6 +66,29 @@
   - 購入履歴モデル PurchaseHistory
 - **作業時間**: 30m
 
+### タスク3: [商品ページの作成]
+- **説明**: 商品、トップページの作成
+- **要件**: 
+  - 商品コントローラー(TOPページ) ItemController 30m
+  - 商品モデル Item 30m
+  - サンプルデータ登録 40m
+  - 画面の作成 70m
+  - 商品詳細ページの作成 5m
+
+- **作業時間**: 140m
+
+### タスク3: [ユーザーページの作成]
+- **説明**: 会員登録ページの作成
+- **要件**: 
+  - ユーザーコントローラー UserController
+  - ユーザーモデル User
+  - 購入履歴モデル PurchaseHistory
+  - サンプルデータ登録
+  - 画面の作成
+
+- **作業時間**: 
+
+
 ## 進捗状況
 - [x] タスク1 完了
 - [x] タスク2 未完了
@@ -73,3 +96,4 @@
 ## ノート
 - ※1 https://railsguides.jp/getting_started.html
 - ※2 https://qiita.com/kmkkiii/items/f07803ddaab267e1a407
+- https://fakerjs.dev/api/commerce.html
