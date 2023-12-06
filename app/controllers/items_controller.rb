@@ -1,4 +1,4 @@
-class ItemController < ApplicationController
+class ItemsController < ApplicationController
   def home
     @items = Item.paginate(page: params[:page])
   end
