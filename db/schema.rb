@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_05_181903) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_08_080449) do
   create_table "cart_details", force: :cascade do |t|
     t.integer "item_id", null: false
     t.integer "cart_id", null: false
@@ -36,6 +36,33 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_05_181903) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "purchase_histories", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "sum_price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_purchase_histories_on_user_id"
+  end
+
+  create_table "purchase_history_details", force: :cascade do |t|
+    t.integer "purchasehistory_id", null: false
+    t.integer "item_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_purchase_history_details_on_item_id"
+    t.index ["purchasehistory_id"], name: "index_purchase_history_details_on_purchasehistory_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "cart_details", "carts"
   add_foreign_key "cart_details", "items"
+  add_foreign_key "purchase_histories", "users"
+  add_foreign_key "purchase_history_details", "items"
+  add_foreign_key "purchase_history_details", "purchasehistories"
 end
