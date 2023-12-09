@@ -81,8 +81,9 @@
 - **説明**: 会員登録ページの作成
 - **要件**: 
   - ユーザーコントローラー UserController
-  - ユーザーモデル User
-  - 購入履歴モデル PurchaseHistory
+  - ユーザーモデル User 2m
+  - 購入履歴モデル PurchaseHistory 2m
+    - 購入履歴モデル PurchaseHistory 2m
   - サンプルデータ登録
   - 画面の作成
 
