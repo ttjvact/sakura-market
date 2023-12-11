@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :items
   resources :carts
   resources :users
-  resources :login
+  #resources :login
+  get 'login', to: 'login#index', as: 'login_page'
+  post 'login', to: 'login#create', as: 'login_action'
   # post '/cart', to: 'cart#create', as: 'create_cart'
   # get '/cart', to: 'cart#index'
 end
