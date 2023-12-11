@@ -1,5 +1,5 @@
 <h1>カート画面</h1>
-<%= @cart.id %> - ¥<%= @item.price %>
-<%= form_with url: carts_path, method: :post do |form| %>
-  <%= form.hidden_field :item_id, value: @item.id %>
-<% end %>
+<%= @cart.id %>
+  <% @cart.cart_details.each do |detail| %>
+    <li><%= link_to "#{detail.item.product_name} - ¥#{detail.item.price}", item_path(detail.item) %></li>
+  <% end %>
