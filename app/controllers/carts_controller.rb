@@ -12,8 +12,8 @@ class CartsController < ApplicationController
 
     private
     def get_current_cart
-        cart = Cart.where(user_id: current_user).last
-        cart = Cart.create(user_id: current_user) unless cart
+        cart = Cart.where(user_id: current_user.id).last
+        cart = Cart.create(user_id: current_user.id) unless cart
         cart
     end
     def add_cart(item_id)

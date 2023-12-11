@@ -19,6 +19,12 @@
     )
 end
 
+User.create!(
+    email: 'test@example.com',
+    password: 'test',
+    password_confirmation: 'test'
+)
+
 # t.string :product_name
 # t.text :product_image
 # t.integer :price

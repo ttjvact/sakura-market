@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   resources :items
   resources :users
   resources :login
+  resources :addresses
   resource :cart
+
   # post '/cart', to: 'cart#create', as: 'create_cart'
   # get '/cart', to: 'cart#index'
 end

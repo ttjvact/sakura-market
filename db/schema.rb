@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_075818) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_11_183409) do
+  create_table "addresses", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.string "postal_code"
+    t.string "prefecture"
+    t.string "city"
+    t.string "town"
+    t.string "building_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id"
+  end
+
   create_table "cart_details", force: :cascade do |t|
     t.integer "item_id", null: false
     t.integer "cart_id", null: false
@@ -64,6 +76,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_075818) do
     t.string "password_digest"
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "cart_details", "carts"
   add_foreign_key "cart_details", "items"
   add_foreign_key "carts", "users"

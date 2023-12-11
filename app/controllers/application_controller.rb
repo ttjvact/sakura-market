@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
     end
 
     def current_user
-        session[:user_id]
+        user_id = session[:user_id]
+        user = User.find_by(id: user_id)
+        user
     end
 end
