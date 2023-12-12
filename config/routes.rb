@@ -15,12 +15,13 @@ Rails.application.routes.draw do
   
   root "items#home"
   resources :items
-  resources :users
   resources :addresses
-  resources :order
+  resources :order, only:[:index, :create]
   resource :cart
+  resource :users
 
-  get '/order/complete', to: 'order#complete', as: 'order_complete'
+  get '/order/complete/:id', to: 'order#complete', as: 'order_complete'
+  get '/order/history', to: 'order#history', as: 'order_history'
   get 'login', to: 'login#index', as: 'login_page'
   post 'login', to: 'login#create', as: 'login_action'
 end

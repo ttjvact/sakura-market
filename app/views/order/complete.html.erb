@@ -1,6 +1,6 @@
 <h1>注文完了</h1>
 
-<%= @order.cart.id %>
+<%= @order.cart_id %>
   <% @order.cart.cart_details.each do |detail| %>
     <li><%= link_to "#{detail.item.product_name} - ¥#{detail.item.price} - #{detail.num}", item_path(detail.item) %></li>
   <% end %>

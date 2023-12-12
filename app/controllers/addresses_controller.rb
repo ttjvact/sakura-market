@@ -10,7 +10,7 @@ class AddressesController < ApplicationController
         address.postal_code = postal_code 
         address.user_id = current_user.id
         address.save
-        redirect_to user_path(current_user)
+        redirect_to users_path
     end
 
     private
