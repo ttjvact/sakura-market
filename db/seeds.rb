@@ -19,6 +19,23 @@
     )
 end
 
+User.create!(
+    email: 'test@example.com',
+    password: 'test',
+    password_confirmation: 'test'
+)
+
+User.create!(
+    email: 'admin@example.com',
+    password: 'test',
+    password_confirmation: 'test',
+    admin_flg: true
+)
+
+Payment.create!(
+    payment_method: '代引'
+)
+
 # t.string :product_name
 # t.text :product_image
 # t.integer :price

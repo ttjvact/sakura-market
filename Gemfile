@@ -7,6 +7,8 @@ gem 'faker'
 gem "will_paginate", "3.3.1"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "bcrypt", "3.1.18"
+gem 'business_time'
+gem 'jquery-ui-rails'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.2"

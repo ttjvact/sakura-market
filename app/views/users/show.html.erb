@@ -1,2 +1,5 @@
 <h1>マイページ</h1>
 <%= @user.email %>
+<%= @user.addresses.each do |address| %>
+<%= address %>
+<% end %>
