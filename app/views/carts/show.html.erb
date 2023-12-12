@@ -3,3 +3,5 @@
   <% @cart.cart_details.each do |detail| %>
     <li><%= link_to "#{detail.item.product_name} - ¥#{detail.item.price} - #{detail.num}", item_path(detail.item) %></li>
   <% end %>
+
+  <%= link_to '注文に進む',  order_index_path %>

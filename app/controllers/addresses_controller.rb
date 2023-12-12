@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-    before_action :auth_user!
+    before_action :auth_user
     def new
         @address = Address.new
     end

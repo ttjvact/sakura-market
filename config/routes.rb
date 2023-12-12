@@ -7,21 +7,20 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
-<<<<<<< HEAD
+
   namespace :admin do
     resources :users
-    resources :products
+    resources :items
   end
-=======
-
+  
   root "items#home"
   resources :items
   resources :users
-  resources :login
   resources :addresses
+  resources :order
   resource :cart
 
-  # post '/cart', to: 'cart#create', as: 'create_cart'
-  # get '/cart', to: 'cart#index'
->>>>>>> address-page
+  get '/order/complete', to: 'order#complete', as: 'order_complete'
+  get 'login', to: 'login#index', as: 'login_page'
+  post 'login', to: 'login#create', as: 'login_action'
 end
