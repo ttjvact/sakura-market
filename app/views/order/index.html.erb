@@ -27,15 +27,28 @@
 
 <script>
 $(document).ready(function() {
-  var disabledDays = [0, 6]; // 日曜日と土曜日を無効にする
+  var disabledDays = [0, 6];
+
   $('#order_info_delivery_date').datepicker({
     dateFormat: 'yy-mm-dd',
-    minDate: 3,
-    maxDate: 14,
+    minDate: calculateDate(3, disabledDays),
+    maxDate: calculateDate(14, disabledDays),
     beforeShowDay: function(date) {
       var day = date.getDay();
       return [disabledDays.indexOf(day) == -1];
     }
   });
+
+  function calculateDate(addDays, disabledDays) {
+    var date = new Date();
+    var count = 0;
+    while (count < addDays) {
+      date.setDate(date.getDate() + 1);
+      if (disabledDays.indexOf(date.getDay()) == -1) {
+        count++;
+      }
+    }
+    return date;
+  }
 });
 </script>
