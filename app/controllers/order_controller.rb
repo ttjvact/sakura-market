@@ -30,6 +30,6 @@ class OrderController < ApplicationController
     end
 
     def history
-        @order = current_user.orders
+        @orders = current_user.orders
     end
 end

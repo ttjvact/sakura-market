@@ -1,3 +1,5 @@
 <h1>注文履歴</h1>
-
-<%= @orders %>
+user_id
+<%= @orders.each do | order | %>
+ <%= order %>   
+<% end %>
