@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_11_183409) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_12_205340) do
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "postal_code"
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_183409) do
     t.string "building_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "name"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -52,6 +53,32 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_183409) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "cart_id", null: false
+    t.integer "address_id", null: false
+    t.integer "payment_id", default: 1, null: false
+    t.integer "shipping_fee"
+    t.integer "cash_fee"
+    t.integer "subtotal"
+    t.integer "total"
+    t.integer "total_tax"
+    t.date "delivery_date"
+    t.string "delivery_time"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["address_id"], name: "index_orders_on_address_id"
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["payment_id"], name: "index_orders_on_payment_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "payments", force: :cascade do |t|
+    t.string "payment_method", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "purchase_histories", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "sum_price"
@@ -74,12 +101,17 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_11_183409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.boolean "admin_flg", default: false, null: false
   end
 
   add_foreign_key "addresses", "users"
   add_foreign_key "cart_details", "carts"
   add_foreign_key "cart_details", "items"
   add_foreign_key "carts", "users"
+  add_foreign_key "orders", "addresses"
+  add_foreign_key "orders", "carts"
+  add_foreign_key "orders", "payments"
+  add_foreign_key "orders", "users"
   add_foreign_key "purchase_histories", "users"
   add_foreign_key "purchase_history_details", "items"
   add_foreign_key "purchase_history_details", "purchasehistories"

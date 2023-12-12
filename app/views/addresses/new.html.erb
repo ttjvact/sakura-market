@@ -1,5 +1,7 @@
 <h1>住所登録</h1>
 <%= form_with(model: @address) do |f|%>
+<%= f.label :name%>
+<%= f.text_field :name %>
 <%= f.label :postal_code %>
 <%= f.number_field :postal_code1, id:'postal_code1' %>-<%= f.number_field :postal_code2, id:'postal_code2' %>
 <%= f.label :prefecture%>
