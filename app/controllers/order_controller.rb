@@ -10,6 +10,8 @@ class OrderController < ApplicationController
         order = Order.new
         order.address_id = params[:order_info][:address_id]
         order.payment_id = params[:order_info][:payment_id]
+        order.delivery_date = params[:order_info][:delivery_date]
+        order.delivery_time = params[:order_info][:delivery_time]
         order.cart_id = @cart.id
         order.user_id = current_user.id
         order.shipping_fee = @cart.shipping_fee
