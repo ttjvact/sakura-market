@@ -22,6 +22,4 @@ Rails.application.routes.draw do
   get '/order/complete', to: 'order#complete', as: 'order_complete'
   get 'login', to: 'login#index', as: 'login_page'
   post 'login', to: 'login#create', as: 'login_action'
-  # post '/cart', to: 'cart#create', as: 'create_cart'
-  # get '/cart', to: 'cart#index'
 end
