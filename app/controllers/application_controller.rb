@@ -8,4 +8,10 @@ class ApplicationController < ActionController::Base
         user = User.find_by(id: user_id)
         user
     end
+
+    def get_current_cart
+        @cart = Cart.where(user_id: current_user.id).last
+        @cart = Cart.create(user_id: current_user.id) unless @cart
+        @cart
+    end
 end
