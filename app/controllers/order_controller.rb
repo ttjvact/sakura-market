@@ -4,9 +4,11 @@ class OrderController < ApplicationController
 
     def index
         @addresses = current_user.addresses
+        redirect_to new_address_path if @addresses.empty?
     end
 
     def create
+        redirect_to cart_path if @cart.item_num == 0
         order = Order.new
         order.address_id = params[:order_info][:address_id]
         order.payment_id = params[:order_info][:payment_id]
