@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+    before_action :auth_user, only: [:show]
     def new
         @user = User.new
     end
@@ -6,12 +7,12 @@ class UsersController < ApplicationController
     def create
         @user = User.new(user_permit)
         if @user.save
-            redirect_to user_path(@user)
+            redirect_to users_path
         end
     end
 
     def show
-        @user = User.find(params[:id])
+        @user = User.find(current_user.id)
     end
 
     private

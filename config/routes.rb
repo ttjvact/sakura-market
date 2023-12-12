@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   root "items#home"
   resources :items
   resources :carts
-  resources :users
+  resource :users
   # post '/cart', to: 'cart#create', as: 'create_cart'
   # get '/cart', to: 'cart#index'
 end
