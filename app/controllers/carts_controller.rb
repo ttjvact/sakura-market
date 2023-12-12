@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-    before_action :auth_user!
+    before_action :auth_user
     before_action :get_current_cart
     def show
     end

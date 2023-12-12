@@ -25,6 +25,13 @@ User.create!(
     password_confirmation: 'test'
 )
 
+User.create!(
+    email: 'admin@example.com',
+    password: 'test',
+    password_confirmation: 'test',
+    admin_flg: true
+)
+
 Payment.create!(
     payment_method: '代引'
 )
