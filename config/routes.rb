@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users
   resources :login
   resources :addresses
+  resources :order
   resource :cart
 
   # post '/cart', to: 'cart#create', as: 'create_cart'
