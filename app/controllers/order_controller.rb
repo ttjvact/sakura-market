@@ -28,4 +28,8 @@ class OrderController < ApplicationController
     def complete
         @order = Order.find_by(id: params[:id])
     end
+
+    def history
+        @order = current_user.orders
+    end
 end

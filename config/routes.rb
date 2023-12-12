@@ -13,11 +13,11 @@ Rails.application.routes.draw do
   resources :users
   resources :login
   resources :addresses
-  resources :order
+  resources :order, only:[:index, :create]
   resource :cart
 
   get '/order/complete', to: 'order#complete', as: 'order_complete'
-
+  get '/order/history', to: 'order#history', as: 'order_history'
 
   # post '/cart', to: 'cart#create', as: 'create_cart'
   # get '/cart', to: 'cart#index'
