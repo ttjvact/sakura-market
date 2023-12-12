@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :order
   resource :cart
 
+  get '/order/complete', to: 'order#complete', as: 'order_complete'
+
+
   # post '/cart', to: 'cart#create', as: 'create_cart'
   # get '/cart', to: 'cart#index'
 end

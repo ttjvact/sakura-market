@@ -1,0 +1,10 @@
+<h1>注文完了</h1>
+
+<%= @order.cart.id %>
+  <% @order.cart.cart_details.each do |detail| %>
+    <li><%= link_to "#{detail.item.product_name} - ¥#{detail.item.price} - #{detail.num}", item_path(detail.item) %></li>
+  <% end %>
+
+  <%= "商品合計 \\#{@order.cart.item_cost}" %>
+  <%= "代引き手数料 \\#{@order.cart.cash_fee}" %>
+  <%= "送料 \\#{@order.cart.shipping_fee}" %>

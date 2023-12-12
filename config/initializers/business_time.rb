@@ -1,0 +1,1 @@
+BusinessTime::Config.work_week = %w[mon tue wed thu fri]

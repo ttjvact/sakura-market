@@ -5,6 +5,10 @@ class Cart < ApplicationRecord
         cart_details.sum { | detail | detail.num * detail.item.price }
     end
 
+    def item_num
+        cart_details.sum { | detail | detail.num }
+    end
+
     def cash_fee
         fee = case item_cost
         when 0...10000
@@ -16,5 +20,11 @@ class Cart < ApplicationRecord
         else
             10000
         end
+    end
+
+    def shipping_fee
+        item_num
+        groups = (item_num.to_f / 5).ceil
+        fee = groups * 600
     end
 end

@@ -86,6 +86,9 @@ GEM
     bootstrap-will_paginate (1.0.0)
       will_paginate
     builder (3.2.4)
+    business_time (0.13.0)
+      activesupport (>= 3.2.0)
+      tzinfo
     capybara (3.39.2)
       addressable
       matrix
@@ -260,6 +263,7 @@ DEPENDENCIES
   bcrypt (= 3.1.18)
   bootsnap
   bootstrap-will_paginate (= 1.0.0)
+  business_time
   capybara
   debug
   dockerfile-rails (>= 1.5)

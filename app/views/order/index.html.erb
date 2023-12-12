@@ -7,19 +7,20 @@
 
   <%= "商品合計 \\#{@cart.item_cost}" %>
   <%= "代引き手数料 \\#{@cart.cash_fee}" %>
+  <%= "送料 \\#{@cart.shipping_fee}" %>
 
-<%= form_with(url: order_index_path, method: :post) do |f| %>
+<%= form_with(scope: :order_info, url: order_index_path, method: :post) do |f| %>
   <%= f.label :address_id, '住所を選択してください' %>
   <%= f.collection_select :address_id, @addresses, :id, :postal_code, prompt: '住所を選択' %>
-  <%= f.submit '送信' %>
-<% end %>
 
-<%= form_with(model: @user) do |f|%>
-<%= f.label :email %>
-<%= f.email_field :email %>
-<%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.label :password_confirmation  %>
-<%= f.password_field :password_confirmation %>
-<%= f.submit "create account" %>
+  <%= f.label :payment_id, '支払い方法を選択してください' %>
+  <%= f.select :payment_id, [[ '代引き', 1 ]] %>
+
+  <%= f.label :delivery_date, "配送日" %>
+  <%= f.date_field :delivery_date, min: 3.business_days.from_now.to_date.to_s, max: 14.business_days.from_now.to_date.to_s %>
+
+  <%= f.label :delivery_time, "時間帯" %>
+  <%= f.select :delivery_time, ['8-12', '12-14', '14-16', '16-18', '18-20', '20-21'] %>
+
+  <%= f.submit '送信' %>
 <% end %>

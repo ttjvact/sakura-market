@@ -25,6 +25,10 @@ User.create!(
     password_confirmation: 'test'
 )
 
+Payment.create!(
+    payment_method: '代引'
+)
+
 # t.string :product_name
 # t.text :product_image
 # t.integer :price
