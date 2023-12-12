@@ -1,0 +1,41 @@
+<h1>注文手続き</h1>
+
+<%= @cart.id %>
+  <% @cart.cart_details.each do |detail| %>
+    <li><%= link_to "#{detail.item.product_name} - ¥#{detail.item.price} - #{detail.num}", item_path(detail.item) %></li>
+  <% end %>
+
+  <%= "商品合計 \\#{@cart.item_cost}" %>
+  <%= "代引き手数料 \\#{@cart.cash_fee}" %>
+  <%= "送料 \\#{@cart.shipping_fee}" %>
+
+<%= form_with(scope: :order_info, url: order_index_path, method: :post) do |f| %>
+  <%= f.label :address_id, '住所を選択してください' %>
+  <%= f.collection_select :address_id, @addresses, :id, :postal_code, prompt: '住所を選択', selected: @addresses.first.id  %>
+
+  <%= f.label :payment_id, '支払い方法を選択してください' %>
+  <%= f.select :payment_id, [[ '代引き', 1 ]] %>
+
+  <%= f.label :delivery_date, "配送日" %>
+  <%= f.text_field :delivery_date, id: 'order_info_delivery_date' %>
+
+  <%= f.label :delivery_time, "時間帯" %>
+  <%= f.select :delivery_time, ['8-12', '12-14', '14-16', '16-18', '18-20', '20-21'] %>
+
+  <%= f.submit '注文完了' %>
+<% end %>
+
+<script>
+$(document).ready(function() {
+  var disabledDays = [0, 6]; // 日曜日と土曜日を無効にする
+  $('#order_info_delivery_date').datepicker({
+    dateFormat: 'yy-mm-dd',
+    minDate: 3,
+    maxDate: 14,
+    beforeShowDay: function(date) {
+      var day = date.getDay();
+      return [disabledDays.indexOf(day) == -1];
+    }
+  });
+});
+</script>

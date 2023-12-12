@@ -78,11 +78,17 @@ GEM
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     base64 (0.2.0)
+    bcrypt (3.1.18)
     bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
+    bootstrap-will_paginate (1.0.0)
+      will_paginate
     builder (3.2.4)
+    business_time (0.13.0)
+      activesupport (>= 3.2.0)
+      tzinfo
     capybara (3.39.2)
       addressable
       matrix
@@ -104,6 +110,8 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    faker (3.2.2)
+      i18n (>= 1.8.11, < 2)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.1)
@@ -119,6 +127,8 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    jquery-ui-rails (6.0.1)
+      railties (>= 3.2.16)
     loofah (2.22.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -242,6 +252,7 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -251,12 +262,17 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  bcrypt (= 3.1.18)
   bootsnap
+  bootstrap-will_paginate (= 1.0.0)
+  business_time
   capybara
   debug
   dockerfile-rails (>= 1.5)
+  faker
   importmap-rails
   jbuilder
+  jquery-ui-rails
   pg (~> 1.5)
   puma (>= 5.0)
   rails (~> 7.1.2)
@@ -269,6 +285,7 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  will_paginate (= 3.3.1)
 
 RUBY VERSION
    ruby 3.2.2p53

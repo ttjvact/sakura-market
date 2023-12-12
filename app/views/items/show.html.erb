@@ -1,0 +1,6 @@
+<h1>商品詳細</h1>
+<%= @item.product_name %> - ¥<%= @item.price %>
+<%= form_with url: cart_path, method: :post do |form| %>
+  <%= form.hidden_field :item_id, value: @item.id %>
+  <%= form.submit "カートに追加" %>
+<% end %>
