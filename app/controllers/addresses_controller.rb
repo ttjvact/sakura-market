@@ -6,7 +6,7 @@ class AddressesController < ApplicationController
 
     def create
         address = Address.new(address_permit)
-        postal_code = "#{params[:postal_code1]}#{params[:postal_code2]}"
+        postal_code = "#{params[:address][:postal_code1]}#{params[:address][:postal_code2]}"
         address.postal_code = postal_code 
         address.user_id = current_user.id
         address.save
