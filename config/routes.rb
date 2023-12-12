@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :admin do
     resources :users
-    resources :products
+    resources :items
   end
 
   root "items#home"

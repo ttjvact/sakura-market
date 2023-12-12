@@ -1,0 +1,12 @@
+<h1>商品情報更新画面</h1>
+
+<%= form_with(model: @item, url: admin_item_path(params[:id]), method: :put) do |f| %>
+
+  <%= @item.product_name %>
+
+  <%= f.label :priority %>
+  <%= f.number_field :priority %>
+
+  <%= f.submit "Update Product Info" %>
+<% end %>
+
