@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_12_205340) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_12_210937) do
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "postal_code"
@@ -79,29 +79,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_205340) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "purchase_histories", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "sum_price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_purchase_histories_on_user_id"
-  end
-
-  create_table "purchase_history_details", force: :cascade do |t|
-    t.integer "purchasehistory_id", null: false
-    t.integer "item_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["item_id"], name: "index_purchase_history_details_on_item_id"
-    t.index ["purchasehistory_id"], name: "index_purchase_history_details_on_purchasehistory_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
     t.boolean "admin_flg", default: false, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
   add_foreign_key "addresses", "users"
@@ -112,7 +96,4 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_205340) do
   add_foreign_key "orders", "carts"
   add_foreign_key "orders", "payments"
   add_foreign_key "orders", "users"
-  add_foreign_key "purchase_histories", "users"
-  add_foreign_key "purchase_history_details", "items"
-  add_foreign_key "purchase_history_details", "purchasehistories"
 end
