@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
     end
 
     def auth_admin_user
-        redirect_to login_page_path unless !!session[:user_id]
         user_id = session[:user_id]
         admin_user = User.find_by(id: user_id, admin_flg: 1);
         redirect_to login_page_path unless admin_user
