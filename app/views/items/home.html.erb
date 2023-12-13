@@ -1,7 +1,14 @@
 <h1>商品一覧</h1>
 <ul>
   <% @items.each do |item| %>
-    <li><%= link_to "#{item.product_name} - ¥#{item.price}", item_path(item) %></li>
+    <li class="item">
+      <div class="product-image">
+        <%= image_tag item.product_image %>
+      </div>
+      <div class="product-info">
+        <%= link_to "#{item.product_name} - ¥#{item.price}", item_path(item) %>
+      </div>
+    </li>
   <% end %>
-  <%= will_paginate @items %>
 </ul>
+<%= will_paginate @items %>
