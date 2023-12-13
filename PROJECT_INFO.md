@@ -147,7 +147,7 @@
 
 - **作業時間**: 
 
-・レイアウトの作成
+・レイアウトの作成 40m
 ・モデルバリデーションの作成
 ・モデルテストの作成
 ・コントローラーテストの作成
@@ -165,3 +165,4 @@
 - ※1 https://railsguides.jp/getting_started.html
 - ※2 https://qiita.com/kmkkiii/items/f07803ddaab267e1a407
 - https://fakerjs.dev/api/commerce.html
+- https://getbootstrap.jp/docs/5.3/getting-started/introduction/
