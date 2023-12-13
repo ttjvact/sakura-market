@@ -12,7 +12,7 @@
     Item.create!(
         product_name: Faker::Commerce.product_name,
         product_image: '',
-        price: Faker::Commerce.price,
+        price: Faker::Commerce.price(range: 500...10000),
         description: Faker::Lorem.sentence(word_count: 20),
         hidden: false,
         priority: n
