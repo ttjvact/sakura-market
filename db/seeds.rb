@@ -11,7 +11,7 @@
 100.times do |n|
     Item.create!(
         product_name: Faker::Commerce.product_name,
-        product_image: '',
+        product_image: 'https://unsplash.it/630/400',
         price: Faker::Commerce.price,
         description: Faker::Lorem.sentence(word_count: 20),
         hidden: false,

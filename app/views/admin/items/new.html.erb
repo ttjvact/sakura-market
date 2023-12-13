@@ -1,25 +1,24 @@
 <h1>商品作成画面</h1>
 
 <%= form_with(model: @item, url: admin_items_path, method: :post) do |f| %>
-
-  <%= f.label :product_name %>
+  <%= f.label :product_name, "商品名" %>
   <%= f.text_field :product_name %>
 
-  <%= f.label :product_image %>
+  <%= f.label :product_image, "商品画像" %>
   <%= f.text_field :product_image %>
 
-  <%= f.label :price %>
+  <%= f.label :price, "価格" %>
   <%= f.number_field :price %>
 
-  <%= f.label :description %>
+  <%= f.label :description, "説明" %>
   <%= f.text_field :description %>
 
-  <%= f.label :hidden %>
+  <%= f.label :hidden, "非表示" %>
   <%= f.number_field :hidden %>
 
-  <%= f.label :priority %>
+  <%= f.label :priority, "表示優先順位" %>
   <%= f.number_field :priority %>
 
-  <%= f.submit "Create Item" %>
+  <%= f.submit "商品の作成" %>
 <% end %>
 

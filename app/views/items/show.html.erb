@@ -1,6 +1,7 @@
 <h1>商品詳細</h1>
+<div><%= image_tag @item.product_image %><div>
 <%= @item.product_name %> - ¥<%= @item.price %>
-<%= form_with url: cart_path, method: :post do |form| %>
-  <%= form.hidden_field :item_id, value: @item.id %>
-  <%= form.submit "カートに追加" %>
+<%= form_with url: cart_path, method: :post do |f| %>
+  <%= f.hidden_field :item_id, value: @item.id %>
+  <%= f.submit "カートに追加" %>
 <% end %>

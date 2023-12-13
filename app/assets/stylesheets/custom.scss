@@ -8,30 +8,16 @@
 }
 
 /* common */
-* {
-  /*font-family: 'Ms Mincho','Hiragino Kaku Gothic ProN';*/
+#main {
+  width: fit-content;
+  margin: 0 auto;
 }
 
-/* typography */
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: #777;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
 }
 
 /* header */
@@ -56,11 +42,32 @@ p {
 }
 
 /* forms */
+form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form label,
+form input,
+form .button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
   margin-bottom: 15px;
   @include box_sizing;
+}
+
+form input[type="submit"] {
+  background-color: #ff7300;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
 }
 
 input {
@@ -89,9 +96,3 @@ input {
     font-weight: normal;
   }
 }
-
-#session_remember_me {
-  width: auto;
-  margin-left: 0;
-}
-
