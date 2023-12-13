@@ -1,15 +1,15 @@
 <h1>会員登録</h1>
 <%= form_with(model: @user) do |f|%>
-<%= f.label :email %>
-<%= f.email_field :email %>
+    <%= render 'shared/error_messages', object: f.object %>
 
-<%= f.label :password %>
-<%= f.password_field :password %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
 
-<%= f.label :password_confirmation  %>
-<%= f.password_field :password_confirmation %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
 
-<%= f.submit "create account" %>
+    <%= f.label :password_confirmation  %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "create account" %>
 <% end %>
-
-<%= link_to "ログイン", login_page_path %>

@@ -3,6 +3,8 @@
 <%= @item.product_name %>
 
 <%= form_with(model: @item, url: admin_item_path(params[:id]), method: :put) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
   <%= f.label :priority "表示優先項目" %>
   <%= f.number_field :priority %>
 
