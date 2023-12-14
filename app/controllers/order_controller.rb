@@ -21,8 +21,13 @@ class OrderController < ApplicationController
         order.subtotal = @cart.item_cost
         order.total =  order.shipping_fee + order.cash_fee + order.subtotal
         order.total_tax = (order.total * 1.08).floor
-        order.save
-        redirect_to order_complete_path(order)
+        if order.save
+            @cart.update(ordered_flg: true)
+            redirect_to order_complete_path(order)
+        else
+            flash[:danger] = order.errors.full_messages.to_sentence
+            redirect_to order_index_path
+        end
     end
 
     def complete
