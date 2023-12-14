@@ -14,6 +14,7 @@ class LoginController < ApplicationController
     end
 
     def destroy
-        session[:user_id].delete
+        session.delete(:user_id)
+        redirect_to login_action_path
     end
 end
