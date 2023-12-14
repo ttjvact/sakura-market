@@ -4,16 +4,16 @@
 <%= f.text_field :name %>
 
 <%= f.label :postal_code, "郵便番号" %>
-<%= f.number_field :postal_code1, id:'postal_code1' %>-<%= f.number_field :postal_code2, id:'postal_code2' %>
+<%= f.number_field :postal_code1, id:'address_postal_code1' %>-<%= f.number_field :postal_code2, id:'address_postal_code2' %>
 
 <%= f.label :prefecture, "都道府県" %>
-<%= f.text_field :prefecture, id:'prefecture' %>
+<%= f.text_field :prefecture, id:'address_prefecture' %>
 
 <%= f.label :city, "市区町村" %>
-<%= f.text_field :city, id: 'city' %>
+<%= f.text_field :city, id: 'address_city' %>
 
 <%= f.label :town, "丁目・番地・号" %>
-<%= f.text_field :town, id:'town' %>
+<%= f.text_field :town, id:'address_town' %>
 
 <%= f.label :building_name, "建物名・部屋番号" %>
 <%= f.text_field :building_name %>
@@ -24,15 +24,15 @@
 <script>
 // 住所から各項目の自動入力
 $(document).ready(function() {
-  $('#postal_code1, #postal_code2').jpostal({
+  $('#address_postal_code1, #address_postal_code2').jpostal({
     postcode : [
-      '#postal_code1', 
-      '#postal_code2'
+      '#address_postal_code1', 
+      '#address_postal_code2'
     ],
     address  : {
-      '#prefecture' : '%3',
-      '#city'       : '%4',
-      '#town'    : '%5'
+      '#address_prefecture' : '%3',
+      '#address_city'       : '%4',
+      '#address_town'    : '%5'
     }
   });
 });
