@@ -1,0 +1,132 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* common */
+#main {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.contents {
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* header */
+
+.header-navibar {
+  background-color: rgb(76, 199, 0); 
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.2em;
+  font-family: 'Hiragino Mincho Pro' !important;
+  color: #fff;
+  letter-spacing: -1px;
+  padding-top: 14px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  text-decoration: none;
+}
+
+/* forms */
+form {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+form label,
+form input,
+form .button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+form input[type="submit"] {
+  background-color: #ff7300;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  height: auto !important;
+}
+
+/* home */
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.item {
+  flex-basis: calc(33.333% - 20px);
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  text-align: center;
+}
+
+.product-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}

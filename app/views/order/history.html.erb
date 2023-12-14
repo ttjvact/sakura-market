@@ -1,5 +1,29 @@
 <h1>注文履歴</h1>
-user_id
-<%= @orders.each do | order | %>
- <%= order %>   
-<% end %>
+<ul>
+  <% @orders.each do |order| %>
+    <li>
+      注文ID: <%= order.id %><br>
+      商品情報: 
+      <% order.cart.cart_details.each do |detail| %>
+        <%= detail.item.product_name %> - <%= detail.num %><br>
+      <% end %>
+      <br>
+      住所:
+      <%= order.address.name %>（氏名）<br>
+      <%= order.address.postal_code %>（郵便番号）<br>
+      <%= order.address.prefecture %>（都道府県）<br>
+      <%= order.address.city %>（市区町村）<br>
+      <%= order.address.town %>（丁目・番地・号）<br>
+      <%= order.address.building_name %>（建物名・部屋番号）<br>
+      支払い方法: <%= order.payment.payment_method %><br>
+      配送料: <%= order.shipping_fee %><br>
+      現金手数料: <%= order.cash_fee %><br>
+      小計: <%= order.subtotal %><br>
+      総合計: <%= order.total %><br>
+      税合計: <%= order.total_tax %><br>
+      配達日: <%= order.delivery_date %><br>
+      配達時間: <%= order.delivery_time %><br>
+      注文日時: <%= order.created_at.strftime("%Y/%m/%d %H:%M") %>
+    </li>
+  <% end %>
+</ul>

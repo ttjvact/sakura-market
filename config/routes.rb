@@ -24,4 +24,5 @@ Rails.application.routes.draw do
   get '/order/history', to: 'order#history', as: 'order_history'
   get 'login', to: 'login#index', as: 'login_page'
   post 'login', to: 'login#create', as: 'login_action'
+  post 'logout', to: 'login#destroy', as: 'logout'
 end

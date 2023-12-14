@@ -1,5 +1,18 @@
 <h1>マイページ</h1>
-<%= @user.email %>
-<%= @user.addresses.each do |address| %>
-<%= address %>
-<% end %>
+<p>メールアドレス: <%= @user.email %></p>
+
+<h2>住所一覧</h2>
+<ul>
+  <% @user.addresses.each do |address| %>
+    <li>
+      <%= address.name %>（氏名）
+      <%= address.postal_code %>（郵便番号）
+      <%= address.prefecture %>（都道府県）
+      <%= address.city %>（市区町村）
+      <%= address.town %>（丁目・番地・号）
+      <%= address.building_name %>（建物名・部屋番号）
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to '注文履歴', order_history_path %>
