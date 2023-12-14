@@ -1,16 +1,16 @@
 <h1>マイページ</h1>
 <p>メールアドレス: <%= @user.email %></p>
 
-<h2>住所一覧</h2>
+<h2>住所一覧</h2><%= link_to '住所追加', new_address_path %>
 <div class="contents">
     <ul>
     <% @user.addresses.each do |address| %>
         <li>
-        氏名: <%= address.name %>
-        郵便番号: <%= address.postal_code %>
-        都道府県: <%= address.prefecture %>
-        市区町村: <%= address.city %>
-        丁目・番地・号: <%= address.town %>
+        氏名: <%= address.name %><br>
+        郵便番号: <%= address.postal_code %><br>
+        都道府県: <%= address.prefecture %><br>
+        市区町村: <%= address.city %><br>
+        丁目・番地・号: <%= address.town %><br>
         建物名・部屋番号: <%= address.building_name %>
         </li>
     <% end %>
@@ -18,3 +18,5 @@
 </div>
 
 <%= link_to '注文履歴', order_history_path %>
+
+<%= button_to 'ログアウト', logout_path, method: :post %>

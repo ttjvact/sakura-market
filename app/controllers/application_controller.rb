@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
     def auth_user
-        redirect_to login_page_path unless !!session[:user_id]
+        redirect_to login_page_path unless session[:user_id]
     end
 
     def auth_admin_user
@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     end
 
     def get_current_cart
-        @cart = Cart.where(user_id: current_user.id).last
+        @cart = Cart.where(user_id: current_user.id, ordered_flg: false).last
         @cart = Cart.create(user_id: current_user.id) unless @cart
         @cart
     end

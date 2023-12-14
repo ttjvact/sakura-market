@@ -12,7 +12,7 @@
     Item.create!(
         product_name: Faker::Commerce.product_name,
         product_image: 'https://unsplash.it/630/400',
-        price: Faker::Commerce.price,
+        price: Faker::Commerce.price(range: 500...10000),
         description: Faker::Lorem.sentence(word_count: 20),
         hidden: false,
         priority: n
@@ -21,14 +21,14 @@ end
 
 User.create!(
     email: 'test@example.com',
-    password: 'test',
-    password_confirmation: 'test'
+    password: 'testtest1234',
+    password_confirmation: 'testtest1234'
 )
 
 User.create!(
     email: 'admin@example.com',
-    password: 'test',
-    password_confirmation: 'test',
+    password: 'testtest1234',
+    password_confirmation: 'testtest1234',
     admin_flg: true
 )
 
