@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_12_210937) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_14_051816) do
   create_table "addresses", force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "postal_code"
@@ -39,6 +39,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_210937) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+    t.boolean "ordered_flg", default: false, null: false
     t.index ["user_id"], name: "index_carts_on_user_id"
   end
 
@@ -58,13 +59,13 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_12_210937) do
     t.integer "cart_id", null: false
     t.integer "address_id", null: false
     t.integer "payment_id", default: 1, null: false
-    t.integer "shipping_fee"
-    t.integer "cash_fee"
-    t.integer "subtotal"
-    t.integer "total"
-    t.integer "total_tax"
-    t.date "delivery_date"
-    t.string "delivery_time"
+    t.integer "shipping_fee", null: false
+    t.integer "cash_fee", null: false
+    t.integer "subtotal", null: false
+    t.integer "total", null: false
+    t.integer "total_tax", null: false
+    t.date "delivery_date", null: false
+    t.string "delivery_time", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["address_id"], name: "index_orders_on_address_id"

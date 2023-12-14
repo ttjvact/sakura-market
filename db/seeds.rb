@@ -21,14 +21,14 @@ end
 
 User.create!(
     email: 'test@example.com',
-    password: 'test',
-    password_confirmation: 'test'
+    password: 'testtest1234',
+    password_confirmation: 'testtest1234'
 )
 
 User.create!(
     email: 'admin@example.com',
-    password: 'test',
-    password_confirmation: 'test',
+    password: 'testtest1234',
+    password_confirmation: 'testtest1234',
     admin_flg: true
 )
 

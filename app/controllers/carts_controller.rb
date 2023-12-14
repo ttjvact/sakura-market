@@ -6,7 +6,11 @@ class CartsController < ApplicationController
     def create
         item_id = params[:item_id]
         item = Item.find(item_id)
-        add_cart(item_id)
+        if item
+            add_cart(item_id)
+        else
+            flash[:alert].now = '商品が見つかりませんでした'
+        end
         redirect_to cart_path
     end
 
