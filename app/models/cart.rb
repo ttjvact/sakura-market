@@ -1,6 +1,6 @@
 class Cart < ApplicationRecord
     has_many :cart_details
-
+    belongs_to :user
     def item_cost
         cart_details.sum { | detail | detail.num * detail.item.price }
     end
@@ -18,7 +18,7 @@ class Cart < ApplicationRecord
         when 30000...100000
             600
         else
-            10000
+            1000
         end
     end
 
