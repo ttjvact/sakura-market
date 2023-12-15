@@ -1,25 +1,29 @@
-# README
+## 使い方
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+その後、 Gems をインストールします。
 
-Things you may want to cover:
+```
+$ bundle install
+```
 
-* Ruby version
-> ruby-3.2.2
+その後、データベースへのマイグレーションを実行します。
 
-* System dependencies
+```
+$ rails db:migrate
+$ rails db:seed
+```
 
-* Configuration
+最後に、テストを実行してうまく動いているかどうか確認してください。
 
-* Database creation
+```
+$ rails test
+```
 
-* Database initialization
+サーバーの実行でアプリが起動します。
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ rails server
+or 
+$ ruby bin/rails server
+```

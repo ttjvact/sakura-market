@@ -1,7 +1,29 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+test_detail_num5:
+  cart: test_cart_num5
+  item: test_item
+  num: 5
 
-one:
-  item: one
+test_detail_num6:
+  cart: test_cart_num6
+  item: test_item
+  num: 6
 
-two:
-  item: two
+test_detail_cash300:
+  cart: test_cart_cash300
+  item: test_item_cash300
+  num: 1
+
+test_detail_cash400:
+  cart: test_cart_cash400
+  item: test_item_cash400
+  num: 1
+
+test_detail_cash600:
+  cart: test_cart_cash600
+  item: test_item_cash600
+  num: 1
+
+test_detail_cash1000:
+  cart: test_cart_cash1000
+  item: test_item_cash1000
+  num: 1

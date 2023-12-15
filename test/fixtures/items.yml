@@ -1,17 +1,19 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+test_item:
+  product_name: test_item
+  price: 100
 
-one:
-  product_name: MyString
-  product_image: MyText
-  price: 1
-  discription: MyString
-  hidden: false
-  priority: 1
+test_item_cash300:
+  product_name: test-product300
+  price: 9999
 
-two:
-  product_name: MyString
-  product_image: MyText
-  price: 1
-  discription: MyString
-  hidden: false
-  priority: 1
+test_item_cash400:
+  product_name: test-product400
+  price: 29999
+
+test_item_cash600:
+  product_name: test-product600
+  price: 99999
+
+test_item_cash1000:
+  product_name: test-product1000
+  price: 100000
